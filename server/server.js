@@ -8,6 +8,7 @@ const transactionsRoutes = require("./routes/Transactions.js");
 const userPortfolio = require("./routes/userPortfolio.js");
 const cryptoTransactionTracking = require("./routes/cryptoTransactionTracking");
 const tokenBalanceChecker = require("./routes/tokenBalanceChecker");
+const ipfsStorageAPI = require("./routes/ipfsStorage");
 
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -39,6 +40,7 @@ app.use("/api/transactions/", transactionsRoutes);
 app.use("/api/users/", usersRoutes);
 app.use("/api/check-transactions/", cryptoTransactionTracking);
 app.use("/api/check-balance/", tokenBalanceChecker);
+app.use("/api/ipfs/", ipfsStorageAPI);
 
 //connect to db et lancement du server
 mongoose
