@@ -87,12 +87,12 @@ const getLatestTransactionsByAddress = async (req, res) => {
  * - `query.dateFrom` - date string of format YYYY-MM-DD since which to fetch transactions
  * - `query.dateTo` - date string of format YYYY-MM-DD up to which to fetch transactions
  * @param res - Response object
- * @returns {Promise<void>}
+ * @returns
  * Possible error callbacks:
  * Error 400 - BAD REQUEST: if none of date range query tokens are specified
  * Error 400 - BAD REQUEST: if parsing of any date range query token fails
  * Error 400 - BAD REQUEST: if date ranges mismatch
- * ERROR 522 - SERVICE UNAVAILABLE: if database query failed
+ * 500 INTERNAL SERVER ERROR: if database encountered error during query execution
  *
  * Success case
  * Returns a response of format {transactions: [
@@ -141,7 +141,7 @@ const getTransactionsForAddress = async (req, res) => {
         return res.status(200).json({transactions: dbTransactions});
     } catch (error) {
         console.error("Database query error:", error);
-        return res.status(522).json({ error: "An error occurred while fetching transactions." });
+        return res.status(500).json({ error: "An error occurred while fetching transactions." });
     }
 }
 

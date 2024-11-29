@@ -7,6 +7,7 @@ const usersRoutes = require("./routes/users.js");
 const transactionsRoutes = require("./routes/Transactions.js");
 const userPortfolio = require("./routes/userPortfolio.js");
 const cryptoTransactionTracking = require("./routes/cryptoTransactionTracking");
+const tokenBalanceChecker = require("./routes/tokenBalanceChecker");
 
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -36,7 +37,8 @@ app.use("/api/workouts/", workoutRoutes);
 app.use("/api/portfolio/", userPortfolio);
 app.use("/api/transactions/", transactionsRoutes);
 app.use("/api/users/", usersRoutes);
-app.use("/api/check-transactions", cryptoTransactionTracking);
+app.use("/api/check-transactions/", cryptoTransactionTracking);
+app.use("/api/check-balance/", tokenBalanceChecker);
 
 //connect to db et lancement du server
 mongoose
