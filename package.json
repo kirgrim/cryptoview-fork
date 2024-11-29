@@ -64,5 +64,17 @@
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "vite": "^5.1.6"
-  }
+  },
+  "description": "This is a simple MERN stack application that displays current prices of cryptocurrencies and allows users to trade them.",
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/toptier1003/cryptoview.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/toptier1003/cryptoview/issues"
+  },
+  "homepage": "https://bitbucket.org/toptier1003/cryptoview#readme"
 }
